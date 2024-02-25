@@ -9,8 +9,22 @@
 </head>
 <body>
     <h1>Basic Flask app.</h1>
+    <button onclick="getkey()">click me to receive api key</button>
     <h1 id="givekey">here's your open ai key:</h1>
-
-    
+    <script>
+        function getkey(){
+            console.log('attempt get key');
+            fetch('/flaskFunction')
+            .then(response => response.text())
+                .then(data => {
+                    // Log or use the retrieved data as needed
+                    console.log(data);
+                    document.getElementById('givekey').innerHTML+=data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
 </body>
 </html>
