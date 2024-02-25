@@ -3,13 +3,15 @@ from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 import joblib
-#from waitress import serve
+from waitress import serve
 import predictionmodel as predictionmodel
 from predictionmodel import FightPredictor
 import fightanalyzer as fa
+
 app = Flask(__name__)
 CORS(app)
 predictor = None
+
 @app.route("/flaskFunction")
 def returnSimpleFlaskFunc():
     global predictor
@@ -41,6 +43,6 @@ def getfighterstats(fighternameFirst='Conor',fighternameLast='McGregor'):
 
 
 if __name__ == "__main__":
-#serve(app,host='0.0.0.0',port=50100)
-    app.run()
+    serve(app,host='0.0.0.0',port=50100)
+    
     
