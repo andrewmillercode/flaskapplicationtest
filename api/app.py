@@ -1,6 +1,9 @@
 from flask import Flask, request,render_template
 import requests
 from bs4 import BeautifulSoup
+
+from waitress import serve
+
 app = Flask(__name__)
 
 
@@ -18,4 +21,5 @@ def process():
     result = 'skull'
     return result 
 '''
-
+if __name__ == "__main__":
+    serve(app,host='0.0.0.0',port=50100)
