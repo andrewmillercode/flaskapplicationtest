@@ -9,7 +9,7 @@ function App() {
   function getData(type) {
     axios({
       method: "GET",
-      url:"http://localhost:5000"+type,
+      url:"https://flaskapplicationtest.onrender.com"+type,
     })
     .then((response) => {
       const res = response.data

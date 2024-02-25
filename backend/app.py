@@ -11,7 +11,9 @@ import fightanalyzer as fa
 app = Flask(__name__)
 CORS(app)
 predictor = None
-
+@app.route('/')
+def home():
+    return 'hello'
 @app.route("/flaskFunction")
 def returnSimpleFlaskFunc():
     global predictor
