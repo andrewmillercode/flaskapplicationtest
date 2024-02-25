@@ -28,4 +28,27 @@
 html,body{
     margin: 0;
     padding: 0;
-  }
+}
+.buttonHolder{
+    display: flex;
+    height: 4vh;
+    width: 15vw;
+    margin:1%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.button{
+    border: 1vm;
+    margin:15px;
+    border-color: rgba(255, 255, 255, 0);
+    border-style:solid;
+    border-radius: 12px;
+    background-color: rgb(65, 65, 65);
+    color: rgb(255, 255, 255);
+    transition: border-color .25s;
+}
+.button:hover{
+    transition: border-color .5s;
+    border-color: rgb(255, 255, 255);
+}

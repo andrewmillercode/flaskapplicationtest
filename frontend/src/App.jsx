@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import Button from "./Button.jsx"
+import Button from "./myButton.jsx"
 
 function App() {
   var header = <h1 className="text-title">Welcome!</h1>
@@ -11,7 +11,12 @@ function App() {
       {header}
       {desc1}
       {desc2}
-      <Button/>
+      <div className="buttonHolder">
+        <Button/>
+        <Button/>
+        <Button/>
+        </div>
+      
     </div>
   );
 }
