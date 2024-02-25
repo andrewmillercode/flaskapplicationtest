@@ -2,6 +2,28 @@
     display: flex;
     height: 100vh;
     background-color: rgb(35, 35, 35);
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+[class*="text-"]{
+    color:rgb(255, 255, 255);
+    font-family: Helvetica;
+}
+.text-title{
+    font-weight:bold;
+    padding: auto;
+    margin :0;
+}
+.text-thin{
+    font-weight: 200;
+    color:rgb(214, 214, 214);
+}
+.text-extrathin{
+    font-weight: 100;
+    font: lighter;
+    margin :0;
+    color:rgb(147, 147, 147);
 }
 html,body{
     margin: 0;
