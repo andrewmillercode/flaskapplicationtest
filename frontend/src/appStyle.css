@@ -1,0 +1,9 @@
+.main{
+    display: flex;
+    height: 100vh;
+    background-color: rgb(35, 35, 35);
+}
+html,body{
+    margin: 0;
+    padding: 0;
+  }
