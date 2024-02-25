@@ -6,10 +6,10 @@ function App() {
 
   const [profileData, setProfileData] = useState(null)
 
-  function getData() {
+  function getData(type) {
     axios({
       method: "GET",
-      url:"http://localhost:5000/flaskFunction",
+      url:"http://localhost:5000"+type,
     })
     .then((response) => {
       const res = response.data
@@ -21,7 +21,7 @@ function App() {
         console.log(error.response.headers)
         }
     })}
-    getData()
+    
   var header = <h1 className="text-title">Welcome!</h1>
   var desc1 = <h3 className="text-thin">This is a basic app.</h3>
   var desc2 = <h4 className="text-extrathin">Test out the buttons.</h4>
@@ -38,10 +38,10 @@ function App() {
       <div className="buttonHolder">
         <Button
         text='button 1'
-        func={() => getData()}/>
+        func={() => getData('/flaskFunction')}/>
         <Button
         text='button 2'
-        func={() => toconsole('Button 2 clicked!')}/>
+        func={() => getData('/fighterstats')}/>
         <Button
         text='button 3'
         func={() => toconsole('Button 3 clicked!')}/>
