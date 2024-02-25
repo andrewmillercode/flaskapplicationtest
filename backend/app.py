@@ -1,21 +1,20 @@
-from flask import Flask, request,render_template
+from flask import Flask
+from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 
-from waitress import serve
+#from waitress import serve
 
 app = Flask(__name__)
-
-
-@app.route("/")
-def index():
-    return render_template('index.html')
+CORS(app)
+i=1
 @app.route("/flaskFunction")
 def returnSimpleFlaskFunc():
-    response = requests.get('https://pastebin.com/Xe9bsnF1')
-    soup = BeautifulSoup(response.text, 'html.parser')
-    key = soup.find("div", class_ ="de1").text
-    return str(key.strip())
+    global i
+    i+=1
+    return str(i)
+    
 
 if __name__ == "__main__":
-    serve(app,host='0.0.0.0',port=50100)
+#serve(app,host='0.0.0.0',port=50100)
+    app.run()

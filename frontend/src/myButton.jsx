@@ -1,9 +1,9 @@
 import './appStyle.css'
 
-function Button() {
-  var text = 'hello'
+function Button({text,func}) {
+  
   return(
-    <button className='button'>{text}</button>
+    <button className='button' onClick={func}>{text}</button>
   );
 }
 

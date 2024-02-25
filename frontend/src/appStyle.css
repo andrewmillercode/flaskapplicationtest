@@ -46,9 +46,10 @@ html,body{
     border-radius: 12px;
     background-color: rgb(65, 65, 65);
     color: rgb(255, 255, 255);
-    transition: border-color .25s;
+    transition: border-color .25s,transform .15s;
 }
 .button:hover{
-    transition: border-color .5s;
+    transition: border-color .5s,transform .25s;
+    transform: scale(1.25);
     border-color: rgb(255, 255, 255);
 }
