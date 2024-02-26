@@ -23,8 +23,11 @@ def returnSimpleFlaskFunc():
     if predictor:
         return 'model found already'
     else:
-        predictor = joblib.load('backend/prediction_model.joblib')
-        return 'model created'
+        try:
+            predictor = joblib.load('./backend/prediction_model.joblib')
+            return 'model created'
+        except:
+            return 'model failed to create.'
 
 @app.route('/fighterstats')
 def getfighterstats(fighternameFirst='Conor',fighternameLast='McGregor'):
@@ -41,9 +44,9 @@ def getfighterstats(fighternameFirst='Conor',fighternameLast='McGregor'):
         
             response = f"{fighter.fullName} 's stats:\n\n" + '\n'.join(response)
             return response
-        else:
-            print('NO fighter found')
-            return 'error'
-
+        
+    print('NO fighter found')
+    return 'error'
+print(returnSimpleFlaskFunc())
 #serve(app,host='0.0.0.0', port=1421)
     
