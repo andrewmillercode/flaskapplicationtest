@@ -7,7 +7,7 @@ from waitress import serve
 import predictionmodel as predictionmodel
 from predictionmodel import FightPredictor
 import fightanalyzer as fa
-
+import os
 app = Flask(__name__)
 CORS(app)
 predictor = None
@@ -24,7 +24,10 @@ def returnSimpleFlaskFunc():
         return 'model found already'
     else:
         try:
-            predictor = joblib.load('./backend/prediction_model.joblib')
+            script_dir = os.path.dirname(os.path.realpath(__file__))
+            model_dir = os.path.join(script_dir, 'prediction_model.joblib')
+            print(model_dir)
+            predictor = joblib.load(model_dir)
             return 'model created'
         except:
             return 'model failed to create.'
