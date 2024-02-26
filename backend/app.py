@@ -23,7 +23,7 @@ def returnSimpleFlaskFunc():
     if predictor:
         return 'model found already'
     else:
-        predictor = joblib.load('prediction_model.joblib')
+        predictor = joblib.load('backend/prediction_model.joblib')
         return 'model created'
 
 @app.route('/fighterstats')
