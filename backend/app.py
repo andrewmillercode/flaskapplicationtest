@@ -4,13 +4,16 @@ import requests
 from bs4 import BeautifulSoup
 import joblib
 from waitress import serve
-import predictionmodel as predictionmodel
+import predictionmodel
 from predictionmodel import FightPredictor
 import fightanalyzer as fa
 import os
 app = Flask(__name__)
 CORS(app)
-predictor = None
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+predictor = FightPredictor(os.path.join(script_dir, 'FighterStatistics.csv'))
 
 @app.route('/')
 def home():
@@ -24,7 +27,7 @@ def returnSimpleFlaskFunc():
         return 'model found already'
     else:
         
-        script_dir = os.path.dirname(os.path.realpath(__file__))
+        
         model_dir = os.path.join(script_dir, 'prediction_model.joblib')
         predictor = joblib.load(model_dir)
         return 'model created'
