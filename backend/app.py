@@ -11,10 +11,12 @@ import fightanalyzer as fa
 app = Flask(__name__)
 CORS(app)
 predictor = None
+
 @app.route('/')
 def home():
     return 'hello'
-@app.route("/flaskFunction")
+
+@app.route('/flaskFunction')
 def returnSimpleFlaskFunc():
     global predictor
     print("checking model init")
@@ -43,5 +45,5 @@ def getfighterstats(fighternameFirst='Conor',fighternameLast='McGregor'):
             print('NO fighter found')
             return 'error'
 
-    
+serve(app,host='0.0.0.0', port=1421)
     
