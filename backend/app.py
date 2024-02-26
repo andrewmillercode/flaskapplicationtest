@@ -26,8 +26,6 @@ def returnSimpleFlaskFunc():
         
         script_dir = os.path.dirname(os.path.realpath(__file__))
         model_dir = os.path.join(script_dir, 'prediction_model.joblib')
-        print(model_dir)
-        return model_dir
         predictor = joblib.load(model_dir)
         return 'model created'
        
