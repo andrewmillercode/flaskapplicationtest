@@ -48,6 +48,6 @@ def getfighterstats(fighternameFirst='Conor',fighternameLast='McGregor'):
         
     print('NO fighter found')
     return 'error'
-print(returnSimpleFlaskFunc())
+
 #serve(app,host='0.0.0.0', port=1421)
     
